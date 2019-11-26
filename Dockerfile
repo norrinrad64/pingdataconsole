@@ -37,7 +37,7 @@ COPY index.html /usr/local/tomcat/webapps/ROOT/
 COPY server.xml /usr/local/tomcat/conf/
 COPY keystore /opt/in/
 COPY liveness.sh /usr/local/bin/
-HEALTHCHECK --interval=31s --timeout=30s --start-period=5s --retries=3 CMD [ "/usr/local/bin/liveness.sh" ]
+HEALTHCHECK --interval=31s --timeout=30s --start-period=5s --retries=3 CMD /usr/local/bin/liveness.sh
 CMD ["catalina.sh","run"]
 
 #- ## Run
